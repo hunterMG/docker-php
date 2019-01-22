@@ -1,4 +1,8 @@
 FROM php
 
-RUN apt-get update -y && apt-get install -y git libpng-dev && \
-    docker-php-ext-install gd exif bcmath
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    unzip \
+    libpng-dev \
+    && rm -r /var/lib/apt/lists/* \
+    && docker-php-ext-install gd exif bcmath
