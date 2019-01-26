@@ -8,7 +8,7 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/so
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
-        libpng12-dev \
+#        libpng12-dev \
         git \
         ffmpeg \
     && docker-php-ext-install -j$(nproc) iconv mcrypt \
@@ -26,4 +26,4 @@ WORKDIR /var/www/html
 COPY . ./
 
 # Install dependencies with Composer.
-RUN composer install --prefer-source --no-interaction
+#RUN composer install --prefer-source --no-interaction
