@@ -13,7 +13,7 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/so
         ffmpeg \
         zip \
         unzip \
-        php7.1-zip \
+        php7.0-zip \
 #     && docker-php-ext-install -j$(nproc) mcrypt \
     && docker-php-ext-install -j$(nproc) iconv \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
