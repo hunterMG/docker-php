@@ -13,13 +13,14 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/so
         ffmpeg \
         zip \
         unzip \
-        php7.0-zip \
+        libzip-dev \
 #     && docker-php-ext-install -j$(nproc) mcrypt \
     && docker-php-ext-install -j$(nproc) iconv \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install -j$(nproc) bcmath \
-    && docker-php-ext-install -j$(nproc) exif
+    && docker-php-ext-install -j$(nproc) exif \
+    && docker-php-ext-install zip
 
 # Install Composer and make it available in the PATH
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
